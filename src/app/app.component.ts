@@ -6,7 +6,7 @@ import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [ MenuComponent, NgOptimizedImage],
+  imports: [ MenuComponent, NgOptimizedImage, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

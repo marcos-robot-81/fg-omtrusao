@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+
 
 @Component({
 selector:'meno',
+imports:[RouterModule],
 template:`
 <nav>
     <div id="div-menu">
         <a id='menu-titulo'>Figueredo comtrução</a>
     </div>
     <ul>
-        <li><a>Home</a></li>
-        <li><a>Que somos</a></li>
+        <li><a routerLink="/" >Home</a></li>
+        <li><a routerLink="/que-somos" >Que somos</a></li>
     </ul>
 </nav>
 `,
