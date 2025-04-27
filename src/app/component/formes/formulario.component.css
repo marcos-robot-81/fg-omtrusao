@@ -1,0 +1,18 @@
+form{
+    
+}
+
+form ul{
+    list-style: none;
+    padding: 0;
+}
+input{
+    width: 200px;
+    text-align: left;
+    vertical-align: top;
+}
+#imputext{
+    width: 200px;
+    height: 100px;
+    vertical-align: top;
+}

@@ -1,0 +1,13 @@
+<form [formGroup]="dados" (ngSubmit)="enviar()">
+    <ul>
+        <li>
+            <p>Seu nome</p>
+            <input type="text" formControlName="name" required id="inputname" />
+        </li>
+        <li>
+            <p>Qual e o seviso que voce deseja</p>
+            <textarea formControlName="testo" id="imputext"></textarea>
+        </li>
+    </ul>
+        <button type="submit">Enviar</button>
+</form>
