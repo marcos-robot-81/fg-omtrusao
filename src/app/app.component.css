@@ -8,6 +8,9 @@
     margin-top:72px;
     z-index: -10;
 }
+@media (max-width: 372px) {
+    #imaCarp{ margin-top: 120px;}
+}
 #pajina {
     display: flex;
     justify-content: center;
