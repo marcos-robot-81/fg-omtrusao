@@ -19,6 +19,4 @@ export const routes: Routes = [
     }
 
 ];
-export function getRoutes(){
-    console.log(routes)
-}
+

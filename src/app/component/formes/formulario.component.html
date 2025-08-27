@@ -1,13 +1,16 @@
-<form [formGroup]="dados" (ngSubmit)="enviar()">
-    <ul>
-        <li>
-            <p>Seu nome</p>
-            <input type="text" formControlName="name" required id="inputname" />
-        </li>
-        <li>
-            <p>Qual e o seviso que voce deseja</p>
-            <textarea formControlName="testo" id="imputext"></textarea>
-        </li>
-    </ul>
-        <button type="submit">Enviar</button>
+<form [formGroup]="dados" (ngSubmit)="enviar()" novalidate>
+  <div class="form-group">
+    <label for="inputname">Seu nome</label>
+    <input type="text" formControlName="name" id="inputname" placeholder="Digite seu nome completo" required />
+    <div *ngIf="dados.controls.name.invalid && (dados.controls.name.dirty || dados.controls.name.touched)" class="validation-error">
+      <small *ngIf="dados.controls.name.errors?.['required']">O nome é obrigatório.</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="imputext">Qual é o serviço que você deseja?</label>
+    <textarea formControlName="testo" id="imputext" placeholder="Descreva o serviço que precisa..."></textarea>
+  </div>
+
+  <button type="submit" [disabled]="dados.invalid">Enviar Mensagem</button>
 </form>

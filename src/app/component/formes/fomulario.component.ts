@@ -1,33 +1,39 @@
 import { Component } from "@angular/core";
-import { ReactiveFormsModule } from "@angular/forms";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { ReactiveFormsModule, FormGroup, FormControl, Validators } from "@angular/forms";
+import { CommonModule } from "@angular/common";
 
 @Component({
     selector: "app-formulario",
-    imports: [ReactiveFormsModule],
+    standalone: true,
+    imports: [ReactiveFormsModule, CommonModule],
     templateUrl: "./formulario.component.html",
     styleUrl: "./formulario.component.css"
 })
 export class FormularioComponent {
     dados = new FormGroup({
-        name: new FormControl(''),
+        name: new FormControl('', Validators.required),
         testo: new FormControl(''),
     });
-    nomero = 'Nomer'
-    mesagem = ""
-    enviar() {
-        if((this.dados.value.name == '' || this.dados.value.name == null) != true){
-        this.mesagem += "Ola meu nome e: %20"+ this.dados.value.name+",%20";
-        if(this.dados.value.testo != ''){
-            this.mesagem += this.dados.value.testo;
-        }else{
-            this.mesagem += "Gostaria de fazer um oçamento";
-        };
-        
-        this.mesagem = this.mesagem.replace(/ /g, "%20");
-        window.open(`https://wa.me/${this.nomero}?text=${this.mesagem}`)
-        }else{
-            window.alert("Preencha o campo nome")
+
+    // TODO: Substitua '5500000000000' pelo número de WhatsApp real.
+    // É uma boa prática armazenar isso em variáveis de ambiente.
+    numeroWhatsapp = '5500000000000';
+
+    enviar(): void {
+        if (this.dados.invalid) {
+            this.dados.markAllAsTouched();
+            // Considere usar um serviço de notificação ou um modal para uma melhor experiência do usuário.
+            alert("Por favor, preencha o campo nome.");
+            return;
         }
-    };
+
+        const name = this.dados.value.name;
+        const texto = this.dados.value.testo || "Gostaria de fazer um orçamento";
+
+        const mensagem = `Olá, meu nome é ${name}. ${texto}`;
+
+        const whatsappUrl = `https://wa.me/${this.numeroWhatsapp}?text=${encodeURIComponent(mensagem)}`;
+
+        window.open(whatsappUrl, '_blank');
+    }
 }
