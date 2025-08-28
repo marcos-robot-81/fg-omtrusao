@@ -1,3 +1,13 @@
+:host {
+  /* Faz com que o componente ocupe todo o espaço e centralize seu conteúdo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* Faz o componente crescer para ocupar o espaço vertical disponível no .content-area */
+  flex-grow: 1;
+}
+
 .content-card {
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);

@@ -1,11 +1,11 @@
 import { Component } from "@angular/core"
-import { CommonModule, NgOptimizedImage } from "@angular/common";
+import { NgOptimizedImage } from "@angular/common";
 import { RouterModule } from "@angular/router";
 
 @Component({
     selector:"apc",
     standalone: true,
-    imports: [CommonModule, NgOptimizedImage, RouterModule],
+    imports: [NgOptimizedImage, RouterModule],
     templateUrl:"./app.apc.html",
     styleUrl:"app.apc.css"
     

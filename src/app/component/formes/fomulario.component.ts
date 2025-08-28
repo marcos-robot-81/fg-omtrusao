@@ -17,7 +17,7 @@ export class FormularioComponent {
 
     // TODO: Substitua '5500000000000' pelo número de WhatsApp real.
     // É uma boa prática armazenar isso em variáveis de ambiente.
-    numeroWhatsapp = '5500000000000';
+    numeroWhatsapp = '5581987739674';
 
     enviar(): void {
         if (this.dados.invalid) {
@@ -30,7 +30,7 @@ export class FormularioComponent {
         const name = this.dados.value.name;
         const texto = this.dados.value.testo || "Gostaria de fazer um orçamento";
 
-        const mensagem = `Olá, meu nome é ${name}. ${texto}`;
+        const mensagem = `Olá, meu nome é ${name} ||| ${texto}`;
 
         const whatsappUrl = `https://wa.me/${this.numeroWhatsapp}?text=${encodeURIComponent(mensagem)}`;
 

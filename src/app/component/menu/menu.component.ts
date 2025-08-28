@@ -11,6 +11,8 @@ import { RouterModule } from '@angular/router';
       <ul class="menu-links">
         <li><a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
         <li><a routerLink="/que-somos" routerLinkActive="active-link">Quem Somos</a></li>
+        <li><a routerLink="/apc" routerLinkActive="active-link">Materias</a></li>
+
       </ul>
     </nav>
   `,

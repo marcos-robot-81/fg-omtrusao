@@ -1,13 +1,20 @@
+:host {
+  display: block; /* Garante que o componente se comporte como um bloco */
+  width: 100%;
+  max-width: 1200px; /* Define uma largura máxima para o conteúdo da página */
+  margin: 0 auto; /* Centraliza o componente na tela */
+}
+
 .materials-container {
+  /* Este container agora apenas preenche o :host, que já está dimensionado e centralizado. */
+  width: 100%;
   padding: 2rem;
   text-align: center;
   background-color: #f4f7f6;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  margin: 2rem auto;
-  max-width: 1200px;
+  box-sizing: border-box;
 }
-
 .materials-container h1 {
   color: #2c3e50;
   margin-bottom: 0.5rem;
@@ -19,12 +26,11 @@
   font-size: 1.1rem;
   margin-bottom: 2rem;
 }
-
 .material-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  justify-content: center;
+  /* A propriedade 'width: 100%' é desnecessária aqui, pois o grid já ocupa o espaço por padrão. */
 }
 
 a.material-card {

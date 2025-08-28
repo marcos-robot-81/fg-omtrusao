@@ -8,10 +8,8 @@
 .app-container {
   position: relative;
   flex-grow: 1; /* Ocupa o espaço restante */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-y: auto; /* Permite rolagem se o conteúdo for maior que a tela */
+  /* Permite que o conteúdo role verticalmente se for maior que a tela */
+  overflow-y: auto;
 }
 
 .background-image {
@@ -42,7 +40,10 @@
 
 .content-area {
   padding: 2rem;
+  /* A área de conteúdo agora é um container simples,
+     permitindo que cada página defina seu próprio layout.
+     Adicionamos flex para que as páginas que precisam possam ocupar 100% da altura. */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
 }
