@@ -35,5 +35,6 @@ export class FormularioComponent {
         const whatsappUrl = `https://wa.me/${this.numeroWhatsapp}?text=${encodeURIComponent(mensagem)}`;
 
         window.open(whatsappUrl, '_blank');
+        
     }
 }
