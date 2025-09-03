@@ -1,11 +1,12 @@
 import { Component } from "@angular/core"
 import { CommonModule, NgOptimizedImage } from "@angular/common";
 import { RouterModule } from "@angular/router";
+import { Mtc } from './../manuteção/mtc'
 
 @Component({
     selector:"apc", //apção
     standalone: true, // Tornando o componente standalone
-    imports: [CommonModule, NgOptimizedImage, RouterModule], // Importando módulos necessários
+    imports: [CommonModule, NgOptimizedImage, RouterModule, Mtc], // Importando módulos necessários
     templateUrl:"./app.apc.html", // Caminho correto para o template do componente
     styleUrl:"app.apc.css"
     
@@ -15,10 +16,8 @@ import { RouterModule } from "@angular/router";
     materials = [
         { name: 'Areia', image: 'midias/material/areia.png', width: 400, height: 300 },
         { name: 'Pedra Brita', image: 'midias/material/brita.png', width: 400, height: 300 },
-        { name: 'Cimento', image: 'midias/cimento.jpg', width: 400, height: 300 },
-        { name: 'Tijolos', image: 'midias/tijolos.jpg', width: 400, height: 300 },
-        { name: 'Ferro', image: 'midias/ferro.jpg', width: 400, height: 300 },
-        { name: 'Madeira', image: 'midias/madeira.jpg', width: 400, height: 300 },
-        // Adicione mais materiais conforme necessário
+       
     ];
+
+    
 }

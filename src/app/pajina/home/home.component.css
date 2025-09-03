@@ -10,6 +10,7 @@
   max-width: 550px; /* Aumenta um pouco a largura máxima */
   width: 100%;
   box-sizing: border-box;
+  margin: auto;
 }
 
 h1 {

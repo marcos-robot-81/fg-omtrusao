@@ -10,6 +10,7 @@
   max-width: 600px; /* Um pouco maior para acomodar mais texto */
   width: 100%;
   box-sizing: border-box;
+  margin: auto;
 }
 
 h1 {

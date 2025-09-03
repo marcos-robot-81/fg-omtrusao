@@ -5,7 +5,9 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   margin: 2rem auto;
-  max-width: 1200px;
+  max-width: 100wv;
+
+  
 }
 .materials-container h1 {
   color: #2c3e50;
@@ -74,4 +76,11 @@ a.material-card:hover {
   color: #555;
   font-size: 1rem;
   line-height: 1.5;
+}
+
+#rodaper{
+  width: 100vw;
+  height: 100px;
+  background-color: red;
+  z-index: 5;
 }
