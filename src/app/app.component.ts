@@ -4,6 +4,7 @@ import { MenuComponent } from './component/menu/menu.component';
 import { NgOptimizedImage } from '@angular/common';
 
 
+
 @Component({
   selector: 'app-root',
   imports: [ MenuComponent, NgOptimizedImage, RouterOutlet],
@@ -13,4 +14,5 @@ import { NgOptimizedImage } from '@angular/common';
 export class AppComponent {
   title = 'front-end';
   img1 = 'ateroDeBrita.png';
+
 }

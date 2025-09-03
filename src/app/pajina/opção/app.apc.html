@@ -3,21 +3,23 @@
   <p>Explore os materiais de construção que oferecemos:</p>
 
   <div class="material-cards">
-    @for (material of materials; track material.name) {
-      <a class="material-card" [routerLink]="['/selecionar-entrega', material.name]">
-        <div class="material-image-wrapper">
-          <img
-            [ngSrc]="material.image"
-            [alt]="'Imagem de ' + material.name"
-            [width]="material.width"
-            [height]="material.height"
-            priority
-          />
-        </div>
-        <div class="material-info">
-          <h2>{{ material.name }}</h2>
-        </div>
-      </a>
-    }
+    <!-- O div se torna um 'a' para ser um link clicável, mantendo a classe para o estilo -->
+    <a *ngFor="let material of materials" class="material-card" [routerLink]="['/selecionar-entrega', material.name]">
+      <div class="material-image-wrapper">
+        <!-- Usando ngSrc para otimização de imagem -->
+        <img
+          [ngSrc]="material.image"
+          [alt]="'Imagem de ' + material.name"
+          [width]="material.width"
+          [height]="material.height"
+          priority
+        />
+      </div>
+      <div class="material-info">
+        <h2>{{ material.name }}</h2>
+        <!-- Você pode adicionar uma descrição aqui se quiser -->
+        <!-- <p>Descrição breve do material...</p> -->
+      </div>
+    </a>
   </div>
 </div>

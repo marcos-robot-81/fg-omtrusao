@@ -1,19 +1,11 @@
-:host {
-  display: block; /* Garante que o componente se comporte como um bloco */
-  width: 100%;
-  max-width: 1200px; /* Define uma largura máxima para o conteúdo da página */
-  margin: 0 auto; /* Centraliza o componente na tela */
-}
-
 .materials-container {
-  /* Este container agora apenas preenche o :host, que já está dimensionado e centralizado. */
-  width: 100%;
   padding: 2rem;
   text-align: center;
-  background-color: #f4f7f6;
+  background-color: #f4f7f6; /* Um fundo suave */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  box-sizing: border-box;
+  margin: 2rem auto;
+  max-width: 1200px;
 }
 .materials-container h1 {
   color: #2c3e50;
@@ -26,16 +18,16 @@
   font-size: 1.1rem;
   margin-bottom: 2rem;
 }
-.material-cards {
+.material-cards { 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  /* A propriedade 'width: 100%' é desnecessária aqui, pois o grid já ocupa o espaço por padrão. */
+  justify-content: center;
 }
 
 a.material-card {
-  text-decoration: none;
-  color: inherit;
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: inherit; /* Garante que o texto dentro do card não fique azul */
   background-color: #ffffff;
   border-radius: 10px;
   overflow: hidden;
@@ -52,7 +44,7 @@ a.material-card:hover {
 
 .material-image-wrapper {
   width: 100%;
-  height: 200px;
+  height: 200px; /* Altura fixa para as imagens dos cartões */
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -62,7 +54,7 @@ a.material-card:hover {
 .material-image-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
   display: block;
 }
 
@@ -76,4 +68,10 @@ a.material-card:hover {
   font-size: 1.8rem;
   margin-top: 0;
   margin-bottom: 0.5rem;
+}
+
+.material-info p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
 }
