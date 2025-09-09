@@ -1,0 +1,8 @@
+<form [formGroup]="dados">
+    <input type="text" name="cep" placeholder="Cep" formControlName="cep" required />
+    <br/>
+    <input type="text" name="lagadouro" placeholder="lagadouro" formArrayName="lagadouro"/>
+    
+    <p>{{this.dados.value.cep}}</p>
+    <button (click)="buscar()">Buscar</button>
+</form>

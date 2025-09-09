@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MenuComponent } from './component/menu/menu.component';
 import { NgOptimizedImage } from '@angular/common';
-import { rodaper } from './component/rodaper/app.rodaper';
+import { rodaper } from './component/rodape/app.rodaper';
 
 
 

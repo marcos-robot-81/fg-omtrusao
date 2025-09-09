@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { QueSomosComponent } from './pajina/queSomos/somos.component';
 import { HomeComponent } from './pajina/home/home.component';
 import { Apc } from './pajina/opção/app.apc';
+import { cepComponent } from './pajina/cep/cep';
 
 
 export const routes: Routes = [
@@ -22,7 +23,13 @@ export const routes: Routes = [
         path: "apc",
         title: "material",
         component: Apc,
+    },
+    {
+        path: "cep",
+        title: "cep",
+        component: cepComponent,
     }
+
 
 ];
 
