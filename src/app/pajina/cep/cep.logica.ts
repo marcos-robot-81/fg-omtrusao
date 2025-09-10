@@ -20,24 +20,33 @@ interface CerDados{
 
 convete(n: String) {
     console.log(n);
-    this.dados = JSON.parse(n as string);
-    console.log(this.dados.cep);
+    console.log("------ json")
+    let da = JSON.parse(n as string);
+    console.log(da);
+    this.dados.cep = da.cep;
+    this.dados.logradouro = da.logradouro;
+    this.dados.complemento = da.complemento;
+    this.dados.bairro = da.bairro;
+    this.dados.localidade = da.localidade;
+    this.dados.uf = da.uf;
+    this.dados.ibge = da.ibge;
+    this.dados.gia = da.gia;
+    this.dados.ddd = da.ddd;
+    this.dados.siafi = da.siafi;
 }    
 
 
 async validaCeo(cep: string){
-    console.log(cep);
 
     if((cep.length == 8) || true){
-        console.log("valido");
         const url = "https://viacep.com.br/ws/"+cep+"/json/"
         const options = {
             method: 'GET',
         };
-         fetch("https://viacep.com.br/ws/01001000/json/", options).then(response => {
+         fetch(url, options).then(response => {
             if (!response.ok) {
-                return new Error("erro");
                 console.log("erro :"+response.status);
+                return new Error("erro");
             }
             if(!(response.status === 200)){
                 return new Error("status "+response.status);
@@ -47,8 +56,6 @@ async validaCeo(cep: string){
             (response.text().then(text => {this.convete(text);}));
             return " sucesso";
             }
-
-            return 'erro';
         })
     }
     

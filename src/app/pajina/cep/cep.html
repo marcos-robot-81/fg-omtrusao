@@ -1,8 +1,21 @@
 <form [formGroup]="dados">
     <input type="text" name="cep" placeholder="Cep" formControlName="cep" required />
-    <br/>
-    <input type="text" name="lagadouro" placeholder="lagadouro" formArrayName="lagadouro"/>
-    
-    <p>{{this.dados.value.cep}}</p>
-    <button (click)="buscar()">Buscar</button>
+    <br/>    
+    <button typa="submit" (click)="buscar()"   >Buscar</button>
+
+
+    @if(CepDados.cep != undefined){
+        <div id="resultado">
+            <p> Os dados estão certos</p>
+            <input type="text" name="lagadouro" placeholder=`{CepDados.cep}` [value]="CepDados.logradouro" readonly />
+            <input type="text" name="bairro" placeholder=`{CepDados.bairro}` [value]="CepDados.bairro" readonly />
+            <input type="text" name="localidade" placeholder=`{CepDados.localidade}` [value]="CepDados.localidade" readonly />
+            <input type="text" name="uf" placeholder=`{CepDados.uf}` [value]="CepDados.uf" readonly />
+            <input type="text" name="ibge" placeholder=`{CepDados.ibge}` [value]="CepDados.ibge" readonly />
+            <input type="text" name="gia" placeholder=`{CepDados.gia}` [value]="CepDados.gia" readonly />
+            <input type="text" name="ddd" placeholder=`{CepDados.ddd}` [value]="CepDados.ddd" readonly /> 
+            <input type="text" name="siafi" placeholder=`{CepDados.siafi}` [value]="CepDados.siafi" readonly /> 
+            
+        </div>
+    }
 </form>

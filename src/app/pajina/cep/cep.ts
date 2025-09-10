@@ -40,8 +40,7 @@ export class cepComponent {
 
   }
 
-  obter(){
-    this.CepDados = this.CepDados = this.CepSevisor.getdados();
+  obter(){this.CepDados = this.CepSevisor.getdados();
   }
 
 }
