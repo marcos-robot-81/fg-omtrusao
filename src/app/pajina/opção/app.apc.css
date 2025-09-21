@@ -84,3 +84,23 @@ a.material-card:hover {
   background-color: red;
   z-index: 5;
 }
+body {
+  overflow-y: auto;
+}
+
+@media (max-width: 600px) {
+  .materials-container {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+  .material-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .material-image-wrapper {
+    height: 140px;
+  }
+  .material-info h2 {
+    font-size: 1.2rem;
+  }
+}

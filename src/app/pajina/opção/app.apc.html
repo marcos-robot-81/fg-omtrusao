@@ -9,7 +9,7 @@
 
   <div class="material-cards">
     <!-- O div se torna um 'a' para ser um link clicável, mantendo a classe para o estilo -->
-    <a *ngFor="let material of materials" class="material-card" [routerLink]="['/selecionar-entrega', material.name]">
+    <a *ngFor="let material of materials" class="material-card" (click)="parsa(material.name)" >
       <div class="material-image-wrapper">
         <!-- Usando ngSrc para otimização de imagem -->
         <img

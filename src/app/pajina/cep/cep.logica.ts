@@ -13,10 +13,15 @@ interface CerDados{
     siafi: string;
 }
 
+interface material{
+    tipo: string;
+}
+
 @Injectable({
     providedIn: 'root'
 }) export class logica{
     dados: CerDados = {} as CerDados;
+    material: material = {} as material;
 
 convete(n: String) {
     console.log(n);
@@ -38,7 +43,7 @@ convete(n: String) {
 
 async validaCeo(cep: string){
 
-    if((cep.length == 8) || true){
+    if((cep.length == 8)){
         const url = "https://viacep.com.br/ws/"+cep+"/json/"
         const options = {
             method: 'GET',
@@ -62,6 +67,13 @@ async validaCeo(cep: string){
 }
 
 getdados(){return this.dados;}
+
+SetMaterialTipo(tipo: string){
+    this.material.tipo = tipo;
+}
+
+
+
 
 
 }

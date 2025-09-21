@@ -1,21 +1,36 @@
-<form [formGroup]="dados">
-    <input type="text" name="cep" placeholder="Cep" formControlName="cep" required />
-    <br/>    
+<form >
+    @if(cep.length < 8 && estado == true){
+        <p>O valor não e valido</p>
+    }
+    <input type="text" name="cep" placeholder="Cep" [(ngModel)]="cep" required minlength="8" maxlength="8" />
+    <br/>  
+    
+    @if(CepSevisor.material.tipo == undefined){
+        <p style="color: red;" >Material: não celecionado </p>
+    }@else{
+    <p>Material: {{CepSevisor.material.tipo}}</p>
+    }
     <button typa="submit" (click)="buscar()"   >Buscar</button>
 
 
+    
     @if(CepDados.cep != undefined){
+
+        @if(CepDados.uf != "PE"){
+            <p style="color: red;" > So fazemos entrega no estado de PE</p>
+        }@else{
+
         <div id="resultado">
             <p> Os dados estão certos</p>
             <input type="text" name="lagadouro" placeholder=`{CepDados.cep}` [value]="CepDados.logradouro" readonly />
-            <input type="text" name="bairro" placeholder=`{CepDados.bairro}` [value]="CepDados.bairro" readonly />
             <input type="text" name="localidade" placeholder=`{CepDados.localidade}` [value]="CepDados.localidade" readonly />
             <input type="text" name="uf" placeholder=`{CepDados.uf}` [value]="CepDados.uf" readonly />
-            <input type="text" name="ibge" placeholder=`{CepDados.ibge}` [value]="CepDados.ibge" readonly />
-            <input type="text" name="gia" placeholder=`{CepDados.gia}` [value]="CepDados.gia" readonly />
-            <input type="text" name="ddd" placeholder=`{CepDados.ddd}` [value]="CepDados.ddd" readonly /> 
-            <input type="text" name="siafi" placeholder=`{CepDados.siafi}` [value]="CepDados.siafi" readonly /> 
             
+            <button (click)="enviar()" >Enviar</button>
         </div>
+        }
+    
+    
+    
     }
 </form>

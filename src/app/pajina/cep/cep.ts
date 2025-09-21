@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators, FormsModule } from '@angular/forms';
 import { logica } from './cep.logica';
+
 
 interface CerDados{
     cep: string;
@@ -20,27 +21,40 @@ interface CerDados{
   standalone: true, // Tornando o componente standalone
   templateUrl: './cep.html', // Caminho correto para o template do componente
   styleUrl: 'cep.css',
-  imports:[ReactiveFormsModule]
+  imports: [ReactiveFormsModule, FormsModule]
 })
 export class cepComponent {
   CepSevisor = inject(logica);
   CepDados: CerDados = {} as CerDados;
 
 // variavel
-  dados = new FormGroup({
-    cep: new FormControl(''),
-    lagadouro: new FormGroup(''),
-  })
-  material = "";
-  valor = "";
+  cep = '';
+  estado = false;
 
   async buscar(){
-    console.log("buscar");
-    this.CepSevisor.validaCeo(this.dados.value.cep || "").then(abc1 => {this.obter()});
+    this.estado = true;
+    this.CepSevisor.validaCeo(this.cep || "").then(abc1 => {this.obter()});
 
   }
 
   obter(){this.CepDados = this.CepSevisor.getdados();
   }
+
+  enviar(){
+    var numeroWhatsapp = '5581987739674';
+
+    if(this.CepSevisor.material.tipo == undefined){
+      window.alert(" Erro voite e celecione um material")
+    }else{
+      const mensagem = (
+      `Solicitação de orçamento de entrega de material: ` + this.CepSevisor.material.tipo + `, para o endereço: ` + this.CepDados.cep
+      );
+
+      const whatsappUrl = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensagem)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+  }
+  
 
 }
